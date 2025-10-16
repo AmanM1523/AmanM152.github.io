@@ -5,202 +5,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aman Meshram | Portfolio</title>
   <style>
-    :root {
-      --primary: #2196f3;
-      --secondary: #00bcd4;
-      --bg-glass: rgba(255, 255, 255, 0.1);
-      --text-color: #fff;
-      --shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    }
-
+    /* Dark theme setup */
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
-      color: var(--text-color);
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
-      background-size: 300% 300%;
-      animation: gradientMove 8s ease infinite;
-      scroll-behavior: smooth;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      background: #0a0a0a;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      font-size: 26px;
       font-weight: 600;
-      box-shadow: var(--shadow);
-    }
-
-    header a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      transition: color 0.3s;
-    }
-
-    header a:hover {
-      color: #ffd700;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 100px 20px 70px;
-      backdrop-filter: blur(5px);
-      animation: fadeIn 1.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      opacity: 0.9;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 15px rgba(255, 255, 255, 0.05);
     }
 
     section {
       padding: 60px 20px;
-      text-align: center;
     }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 40px;
+    h1, h2, h3 {
+      color: #00bcd4;
+      margin-bottom: 15px;
     }
 
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    /* Project cards */
     .projects {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 25px;
+      margin-top: 20px;
     }
 
     .card {
-      background: var(--bg-glass);
-      backdrop-filter: blur(15px);
-      color: #fff;
+      background: #1a1a1a;
       border-radius: 15px;
       width: 300px;
       padding: 25px;
-      box-shadow: var(--shadow);
-      transition: all 0.4s ease;
-      transform: translateY(0);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 30px rgba(0, 188, 212, 0.3);
     }
 
     .card h3 {
-      color: #ffd700;
+      color: #00bcd4;
       margin-bottom: 10px;
     }
 
-    .contact a {
-      color: #ffd700;
-      text-decoration: none;
-      transition: 0.3s;
+    /* Certifications */
+    .certifications {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
     }
 
-    .contact a:hover {
-      color: #fff;
+    .cert-card {
+      background: #1a1a1a;
+      border-radius: 15px;
+      width: 280px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .cert-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
 
     footer {
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.05);
       padding: 20px;
-      font-size: 14px;
-      text-align: center;
-      backdrop-filter: blur(10px);
-      box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.1);
+      font-size: 15px;
+      color: #aaa;
     }
 
-    .dark-mode {
-      --primary: #121212;
-      --secondary: #1f1f1f;
-      --bg-glass: rgba(255, 255, 255, 0.05);
-      --text-color: #e4e4e4;
+    a {
+      color: #00bcd4;
+      text-decoration: none;
     }
 
-    .toggle-btn {
-      cursor: pointer;
-      background: #ffd700;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 20px;
-      color: #000;
-      font-weight: 600;
-      transition: all 0.3s;
-    }
-
-    .toggle-btn:hover {
-      background: #fff;
-      color: #000;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .projects {
-        flex-direction: column;
-        align-items: center;
-      }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
-    <div>Aman Meshram</div>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <button class="toggle-btn" onclick="toggleDarkMode()">🌓 Mode</button>
-    </nav>
+    Aman Meshram | Portfolio
   </header>
 
-  <section class="hero">
+  <section>
     <h1>Hi, I'm Aman Meshram 👋</h1>
-    <p>Fourth-Year Engineering Student | AI & ML Enthusiast</p>
-    <p>Project: <strong>Vitamin Deficiency Detection using Image Processing and Deep Learning</strong></p>
+    <p>Engineering Graduate | AI & ML Enthusiast | Cybersecurity Learner</p>
+    <p>Project: Vitamin Deficiency Detection using Image Processing and Deep Learning</p>
   </section>
 
-  <section id="projects">
-    <h2>🚀 My Projects</h2>
+  <section>
+    <h2>My Projects</h2>
     <div class="projects">
       <div class="card">
         <h3>Vitamin Deficiency Detection</h3>
-        <p>A CNN-based model that detects different vitamin deficiencies using image processing.</p>
+        <p>A CNN-based deep learning model to detect different vitamin deficiencies using image processing.</p>
       </div>
       <div class="card">
         <h3>Huffman Coding Project</h3>
-        <p>Data compression using Huffman algorithm implemented in Python.</p>
+        <p>Data compression using Huffman algorithm implemented in Python for lossless file size reduction.</p>
+      </div>
+      <div class="card">
+        <h3>Cybersecurity Analyzer</h3>
+        <p>A tool for analyzing website vulnerabilities and ethical hacking practice tasks.</p>
+      </div>
+      <div class="card">
+        <h3>AI Resume Screener</h3>
+        <p>An AI-powered resume screening system that filters candidates using NLP and deep learning models.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>📫 Contact Me</h2>
+  <section>
+    <h2>Certifications</h2>
+    <div class="certifications">
+      <div class="cert-card">
+        <img src="cert_ethhacking.jpg" alt="Ethical Hacking Certificate">
+        <h3>Certified Ethical Hacking</h3>
+        <p>Successfully completed an ethical hacking certification covering penetration testing and network defense.</p>
+      </div>
+      <div class="cert-card">
+        <img src="cert_ml_ai.jpg" alt="Machine Learning and AI Certificate">
+        <h3>Machine Learning & AI</h3>
+        <p>Completed a certification course in AI and ML including CNN, NLP, and model deployment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Me</h2>
     <p>Email: <a href="mailto:amanmeshram789@gmail.com">amanmeshram789@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/AmanM152" target="_blank">AmanM152</a></p>
   </section>
@@ -208,11 +165,5 @@
   <footer>
     © 2025 Aman Meshram | Made with ❤️ using GitHub Pages
   </footer>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
 </body>
 </html>
