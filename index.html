@@ -5,103 +5,222 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aman Meshram | Portfolio</title>
   <style>
+    /* ===== Global Styles ===== */
+    :root {
+      --primary: #2196f3;
+      --secondary: #00bcd4;
+      --bg-glass: rgba(255, 255, 255, 0.1);
+      --text-color: #fff;
+      --shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #00bcd4, #2196f3);
-      color: white;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      background-size: 300% 300%;
+      animation: gradientMove 8s ease infinite;
+      scroll-behavior: smooth;
     }
 
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ===== Navbar ===== */
     header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
       background: rgba(0, 0, 0, 0.3);
-      padding: 20px;
-      font-size: 24px;
-      font-weight: bold;
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      box-shadow: var(--shadow);
     }
 
-    section {
-      padding: 50px 20px;
+    header a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s;
     }
 
-    h1 {
-      font-size: 2.5rem;
+    header a:hover {
+      color: #ffd700;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 70px;
+      backdrop-filter: blur(5px);
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1 {
+      font-size: 3rem;
       margin-bottom: 10px;
     }
 
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+    .hero p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+
+    /* ===== Projects Section ===== */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
     }
 
     .projects {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
     }
 
     .card {
-      background: white;
-      color: #333;
-      border-radius: 10px;
-      width: 280px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
+      background: var(--bg-glass);
+      backdrop-filter: blur(15px);
+      color: #fff;
+      border-radius: 15px;
+      width: 300px;
+      padding: 25px;
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      transform: translateY(0);
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     .card h3 {
-      color: #2196f3;
+      color: #ffd700;
       margin-bottom: 10px;
     }
 
-    footer {
-      background: rgba(0, 0, 0, 0.2);
-      padding: 15px;
-      font-size: 14px;
+    .card a {
+      color: #00e5ff;
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    a {
-      color: #fff;
+    .card a:hover {
       text-decoration: underline;
+    }
+
+    /* ===== Contact Section ===== */
+    .contact a {
+      color: #ffd700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .contact a:hover {
+      color: #fff;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      font-size: 14px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    /* ===== Dark Mode ===== */
+    .dark-mode {
+      --primary: #121212;
+      --secondary: #1f1f1f;
+      --bg-glass: rgba(255, 255, 255, 0.05);
+      --text-color: #e4e4e4;
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      background: #ffd700;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      color: #000;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .projects {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    Aman Meshram | Portfolio
+    <div>Aman Meshram</div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle-btn" onclick="toggleDarkMode()">🌓 Mode</button>
+    </nav>
   </header>
 
-  <section>
+  <section class="hero">
     <h1>Hi, I'm Aman Meshram 👋</h1>
     <p>Fourth-Year Engineering Student | AI & ML Enthusiast</p>
-    <p>Project: Vitamin Deficiency Detection using Image Processing and Deep learning </p>
-    
+    <p>Project: <strong>Vitamin Deficiency Detection using Image Processing and Deep Learning</strong></p>
   </section>
 
-  <section>
-    <h2>My Projects</h2>
+  <section id="projects">
+    <h2>🚀 My Projects</h2>
     <div class="projects">
       <div class="card">
         <h3>Vitamin Deficiency Detection</h3>
         <p>A CNN-based model that detects different vitamin deficiencies using image processing.</p>
-        <a href="#" target="_blank">View Dashboard</a>
+        <a href="#">View Dashboard</a>
       </div>
       <div class="card">
         <h3>Huffman Coding Project</h3>
         <p>Data compression using Huffman algorithm implemented in Python.</p>
+        <a href="#">View Code</a>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Contact Me</h2>
+  <section id="contact" class="contact">
+    <h2>📫 Contact Me</h2>
     <p>Email: <a href="mailto:amanmeshram789@gmail.com">amanmeshram789@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/AmanM152" target="_blank">AmanM152</a></p>
   </section>
@@ -109,5 +228,11 @@
   <footer>
     © 2025 Aman Meshram | Made with ❤️ using GitHub Pages
   </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
