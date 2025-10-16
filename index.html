@@ -39,8 +39,8 @@
       color: #ccc;
     }
 
-    /* Project cards */
-    .projects {
+    /* Cards */
+    .projects, .certifications {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -48,7 +48,7 @@
       margin-top: 20px;
     }
 
-    .card {
+    .card, .cert-card {
       background: #1a1a1a;
       border-radius: 15px;
       width: 300px;
@@ -57,37 +57,14 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
+    .card:hover, .cert-card:hover {
+      transform: translateY(-6px);
       box-shadow: 0 8px 30px rgba(0, 188, 212, 0.3);
     }
 
-    .card h3 {
+    .card h3, .cert-card h3 {
       color: #00bcd4;
       margin-bottom: 10px;
-    }
-
-    /* Certifications */
-    .certifications {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .cert-card {
-      background: #1a1a1a;
-      border-radius: 15px;
-      width: 280px;
-      padding: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease;
-    }
-
-    .cert-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 25px rgba(0, 188, 212, 0.3);
     }
 
     .cert-card img {
@@ -112,6 +89,30 @@
       transform: scale(1.05);
     }
 
+    /* Skills & Education */
+    .skills, .education {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .skill {
+      background: #1a1a1a;
+      border-radius: 30px;
+      padding: 12px 25px;
+      font-weight: 500;
+      color: #00bcd4;
+      box-shadow: 0 2px 10px rgba(0, 188, 212, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0, 188, 212, 0.4);
+    }
+
     footer {
       background: rgba(255, 255, 255, 0.05);
       padding: 20px;
@@ -134,12 +135,41 @@
     Aman Meshram | Portfolio
   </header>
 
+  <!-- Introduction -->
   <section>
     <h1>Hi, I'm Aman Meshram 👋</h1>
     <p>Engineering Graduate | AI & ML Enthusiast | Cybersecurity Learner</p>
     <p>Project: Vitamin Deficiency Detection using Image Processing and Deep Learning</p>
   </section>
 
+  <!-- Education -->
+  <section>
+    <h2>🎓 Education</h2>
+    <div class="education">
+      <div class="skill">Bachelor of Engineering (B.E.) – Computer Engineering</div>
+      <div class="skill">Savitribai Phule Pune University (SPPU)</div>
+      <div class="skill">Graduated: 2025</div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>My Skills</h2>
+    <div class="skills">
+      <div class="skill">C Programming (Master)</div>
+      <div class="skill">Data Structures & Algorithms (DSA)</div>
+      <div class="skill">Algorithm Design</div>
+      <div class="skill">Database Management System (DBMS)</div>
+      <div class="skill">Computer Networks</div>
+      <div class="skill">Operating System (OS)</div>
+      <div class="skill">Computer Organization & Architecture (COA)</div>
+      <div class="skill">Artificial Intelligence</div>
+      <div class="skill">Machine Learning</div>
+      <div class="skill">Python</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
   <section>
     <h2>My Projects</h2>
     <div class="projects">
@@ -162,6 +192,7 @@
     </div>
   </section>
 
+  <!-- Certifications -->
   <section>
     <h2>Certifications</h2>
     <div class="certifications">
@@ -180,6 +211,7 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section>
     <h2>Contact Me</h2>
     <p>Email: <a href="mailto:amanmeshram789@gmail.com">amanmeshram789@gmail.com</a></p>
