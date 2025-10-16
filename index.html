@@ -82,12 +82,34 @@
       width: 280px;
       padding: 20px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0, 188, 212, 0.3);
     }
 
     .cert-card img {
       width: 100%;
       border-radius: 10px;
       margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00bcd4;
+      color: #0a0a0a;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #0097a7;
+      transform: scale(1.05);
     }
 
     footer {
@@ -147,11 +169,13 @@
         <img src="cert_ethhacking.jpg" alt="Ethical Hacking Certificate">
         <h3>Certified Ethical Hacking</h3>
         <p>Successfully completed an ethical hacking certification covering penetration testing and network defense.</p>
+        <a href="cert_ethhacking.jpg" target="_blank" class="btn">View Certificate</a>
       </div>
       <div class="cert-card">
         <img src="cert_ml_ai.jpg" alt="Machine Learning and AI Certificate">
         <h3>Machine Learning & AI</h3>
         <p>Completed a certification course in AI and ML including CNN, NLP, and model deployment.</p>
+        <a href="cert_ml_ai.jpg" target="_blank" class="btn">View Certificate</a>
       </div>
     </div>
   </section>
